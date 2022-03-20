@@ -1,0 +1,318 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  height: max(3vw, 38px);
+  width: 100%;
+  font-size: max(2.1vw, 27px);
+  background-color: rgba(300, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+body {
+  background-color: #252525;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding-top:  15px;
+  margin: 0 auto;
+}
+
+.container h1 {
+  color:  rgb(300, 0, 0);
+  font-size: max(2.6vw, 30px);
+}
+
+.graph {
+  text-align: center;
+}
+
+.graph-image img {
+  max-width: 100%;
+}
+
+.result {
+  color: white;
+  font-size: max(2vw, 19px);
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.result:hover {
+  opacity: 1;
+}
+
+.fa-undo {
+  color: white;
+  opacity: 0.85;
+}
+
+.fa-undo:hover {
+  opacity: 1;
+}
+
+.fa-plus-circle {
+  font-size: max(4.2vw, 42px);
+  color: #ffff00;
+  opacity: 0.9;
+}
+
+.fa-plus-circle:hover {
+  opacity: 1;
+}
+
+.input {
+  color: #ffff00;
+  font-size: max(2.8vw, 28px);
+  text-decoration: none;
+  opacity: 0.88;
+}
+
+.input:hover {
+  opacity: 1;
+}
+
+.ipbtn {
+  color: black;
+  background-color: #ffff00;
+  font-size: max(1.8vw, 20px);
+  opacity: 0.9;
+}
+
+.ipbtn:hover {
+  opacity: 1;
+}
+
+.menu {
+  padding-top: 20px;
+}
+
+
+
+.ipfrom {
+  color: white;
+  font-size: max(1.8vw, 22px);
+}
+
+.udform {
+  color: white;
+  font-size: max(1.8vw, 22px);
+}
+
+
+#id_date_year {
+  width: 22%;
+  height: 30px;
+}
+
+#id_date_month {
+  width: 22%;
+  height: 30px;
+}
+
+#id_date_day {
+  width: 22%;
+  height: 30px;
+}
+
+
+#id_game {
+  width: 35%;
+  height: 30px;
+}
+
+#id_rate {
+  width: 30%;
+  height: 30px;
+}
+
+#id_kind {
+  width: 30%;
+  height: 30px;
+}
+
+
+textarea#id_memo {
+  width: 65%;
+  height: max(7vw, 40px);
+}
+
+
+#id_login {
+  color: black;
+}
+
+#id_password {
+  color: black;
+}
+
+input#id_login {
+  width: 55%;
+}
+
+#id_email {
+  color: black;
+}
+
+#id_password1 {
+  color: black;
+}
+
+#id_password2 {
+  color: black;
+}
+
+
+.cfbtn {
+  color: black;
+  background-color: #ffff00;
+  font-size: max(1.6vw, 18px);
+  opacity: 0.9;
+}
+
+.cfbtn:hover {
+  opacity: 1;
+}
+
+.conform p {
+  color: white;
+  font-size: max(1.7vw, 20px);
+}
+
+.udbtn {
+  color: black;
+  background-color: #ffff00;
+  font-size: max(1.8vw, 22px);
+  opacity: 0.9;
+}
+
+.udbtn:hover {
+  opacity: 1;
+}
+
+.detail h1 {
+  color: white;
+}
+
+.detail h2 {
+  color: white;
+}
+
+.update {
+  color: #ffff00;
+  font-size: max(2.1vw, 22px);
+  text-decoration: none;
+  border: solid 1px;
+  opacity: 0.9;
+}
+
+.update:hover {
+  opacity: 1;
+}
+
+.delete {
+  color: red;
+  font-size: max(2.1vw, 22px);
+  text-decoration: none;
+  border: solid 1px;
+  opacity: 0.9;
+}
+
+.delete:hover {
+  opacity: 1;
+}
+
+.updelete {
+  float: left;
+  padding-right: 25px;
+}
+
+.backhome {
+  color: white;
+  font-size: max(1.7vw, 20px);
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.backhome:hover {
+  opacity: 1;
+}
+
+.log_btn {
+  display: inline-block;
+  border-radius: 7px;
+  background-color: #00ffff;
+  text-decoration: none;
+  color: black;
+  height: max(3vw, 38px);
+  opacity: 0.85;
+}
+
+.log_btn:hover {
+  opacity: 1;
+}
+
+.auth * {
+  font-size: max(2vw, 20px);
+  color: white;
+}
+
+.loginform * {
+  font-size: max(1.7vw, 24px);
+  color: white;
+}
+
+.sign {
+  color: #00ffff;
+  opacity: 0.85;
+}
+
+.sign:hover {
+  opacity: 1.0;
+}
+
+.secondaryAction {
+  color: #00ffff;
+  opacity: 0.85;
+}
+
+.secondaryAction:hover {
+  opacity: 1.0;
+}
+
+.primaryAction {
+  color: black;
+  background-color: #00ffff;
+  opacity: 0.92;
+}
+
+.primaryAction:hover {
+  opacity: 1.0;
+}
+
+
+.signup {
+  color: #00ffff;
+  opacity: 0.85;
+  text-decoration: none;
+}
+
+.signup:hover {
+  opacity: 1.0;
+}
+
+.signupbtn {
+  color: black;
+  background-color: #00ffff;
+  opacity: 0.92;
+}
+
+.signupbtn:hover {
+  opacity: 1.0;
+}

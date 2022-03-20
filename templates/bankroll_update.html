@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="udform">
+        <form method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <p><input class="udbtn" type="submit" value="Update"></p>
+        </form>
+    </div>
+
+    <div class="menu">
+        <div><a href="{{request.META.HTTP_REFERER}}" class="back"><sapn class="fa fa-undo">BACK</sapn></a></div>
+    </div>
+
+</div>
+
+{% endblock %}

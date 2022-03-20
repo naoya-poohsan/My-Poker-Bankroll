@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+	<div class="detail">
+		<h1>{{ object.date }}</h1>
+		<h1>Game -- 
+			{% if object.game == '1' %}	
+				No Limit Hold'em
+			{% elif object.game == '2' %}
+				Limit Hold'em
+			{% elif object.game == '3' %}
+				Pot Limit Omaha
+			{% endif %}</h1>
+
+		<h1>By In -- {{ object.by_in }}</h1>
+
+		<h1>Result -- {{ object.result }}</h1>
+
+		<h2>Rate -- 
+			{% if object.rate == '1' %}
+				0.01 / 0.02
+			{% elif object.rate == '2' %}
+				0.02 / 0.05
+			{% elif object.rate == '3' %}
+				0.05 / 0.10
+			{% elif object.rate == '4' %}
+				0.08 / 0.16
+			{% elif object.rate == '5' %}
+				0.10 / 0.25
+			{% elif object.rate == '6' %}
+				0.25 / 0.50
+			{% elif object.rate == '7' %}
+				0.50 / 1
+			{% elif object.rate == '8' %}
+				1 / 2
+			{% endif %}</h2>
+
+		<h2>Kind --
+			{% if object.kind == '1' %}
+				cash(zoom)
+			{% elif object.kind == '2' %}
+				cash(table)
+			{% elif object.kind == '3' %}
+				tournament
+			{% elif object.kind == '4' %}
+				spin&go
+			{% endif %}</h2>
+
+		<h2>Max Players --
+			{% if object.max_players == '1' %}
+				6
+			{% elif object.max_players == '2' %}
+				9
+			{% endif %}</h2>
+
+		<h2>Memo -- {{ object.memo }}</h2>
+		
+	</div>
+
+	<div class="menu">
+		<div class="updelete"><a href="{% url 'data-update' object.pk %}" class="update">Update</a></div>
+
+		<div class="updelete"><a href="{% url 'data-delete' object.pk %}" class="delete">Delete</a></div>
+
+		<a href="{% url 'data-list' %}" class="backhome"><sapn class="fa fa-undo">Return to Home</sapn></a>
+	</div>
+
+</div>
+
+{% endblock %}

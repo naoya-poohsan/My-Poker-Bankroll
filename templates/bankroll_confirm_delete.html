@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="conform">
+        <form method="post">{% csrf_token %}
+            <p>本当にこのResultを消しますか？ "{{ object.date }} - Result{{ object.result　}} - By in{{ object.by_in }}"</p>
+            <input class="cfbtn" type="submit" value="Confirm">
+        </form>
+    </div>
+
+    <div class="menu">
+        <div><a href="{{request.META.HTTP_REFERER}}" class="back"><sapn class="fa fa-undo">BACK</sapn></a></div>
+    </div>
+</div>
+{% endblock %}

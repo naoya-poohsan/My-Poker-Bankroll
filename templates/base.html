@@ -1,0 +1,38 @@
+{% load static %}
+{% load account %}
+
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Poker BankRoll</title>
+	<script src="https://kit.fontawesome.com/700536e4cf.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="{% static 'css/brstyle.css' %}">
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			
+      		<span class="fa fa-university"></span>
+      		Poker Bankroll
+      		<span class="fa fa-university"></span>
+			
+
+			{% if user.id is None %}
+				 <a href="{% url 'account_login' %}" class="log_btn">Click Here!</a>
+			{% else %}
+				<!--<a>{% user_display user %}</a>-->
+				<a href="{% url 'account_logout' %}" class="log_btn">Log out</a>
+			{% endif %}
+		</header>
+	</div>
+
+	{% block content %}
+	 replace me
+	{% endblock %}
+
+</body>
+	
+</html>

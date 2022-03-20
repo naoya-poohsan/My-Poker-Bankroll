@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+	
+	<div class="ipfrom">
+		<form action='.' method='POST'>{% csrf_token %}
+			{{ form.as_p }}
+		<p><input class="ipbtn" type='submit' value="Save"></p>
+		</form>
+	</div>	
+
+	<div class="menu">
+		<a href="{{request.META.HTTP_REFERER}}" class="back"><sapn class="fa fa-undo">BACK</sapn></a>
+	</div>
+
+</div>
+
+{% endblock %}

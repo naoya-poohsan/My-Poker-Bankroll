@@ -1,0 +1,32 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+
+<div class="container auth">
+
+  <h1>{% trans "Sign Up" %}</h1>
+
+  <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}" class="signup">sign in</a>.{% endblocktrans %}</p>
+
+  <form class="signupform" id="signup_form" method="post" action="{% url 'account_signup' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <p>*パスワードは覚えておいてください*</p>
+    <p>*Please Remember Password*</p>
+    <button class="signupbtn" type="submit">{% trans "Sign Up" %} &raquo;</button>
+  </form>
+
+  <div class="menu">
+      <div><a href="{{request.META.HTTP_REFERER}}" class="back"><sapn class="fa fa-undo">BACK</sapn></a></div>
+  </div>
+
+</div>
+
+{% endblock %}

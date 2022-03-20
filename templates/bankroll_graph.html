@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">	
+
+	<div clss="graph">
+		<h1> Graph </h1>
+			<p class="graph-image">
+				<img src="data:image/png;base64,{{ graph | safe }}">
+			</p>
+
+	</div>
+
+	<div class="menu">
+		<div><a href="{% url 'data-input' %}" class="input"><span class="fa fa-plus-circle fa-2x"></span>New Result</a></div>
+	</div>
+
+	<div class="list">
+		<h1> Result List </h1>
+		{% for instance in object_list %}
+			<p><a href='{{ instance.get_absolute_url }}' class="result">
+			{{ instance.date }} - Result{{ instance.result　}} - By in{{ instance.by_in }}</a></p>
+		{% endfor %}
+	</div>
+
+	<div class="menu">
+		<div><a href="{{request.META.HTTP_REFERER}}" class="back"><sapn class="fa fa-undo">BACK</sapn></a></div>
+	</div>
+
+</div>
+
+{% endblock %}
