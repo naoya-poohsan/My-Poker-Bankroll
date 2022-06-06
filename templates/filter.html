@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class='container'>
+
+    <div class="ipform">
+		<form action="{% url 'filtered-data' %}" method='GET'>{% csrf_token %}
+            {{ form.as_p }}
+		<p><input class="ipbtn" type='submit' value="Go"></p>
+		</form>
+	</div>
+
+
+    <div class="menu">
+        <div><a href="{{request.META.HTTP_REFERER}}" class="back"><sapn class="fa fa-undo">BACK</sapn></a></div>
+    </div>
+
+</div>
+
+{% endblock %}
