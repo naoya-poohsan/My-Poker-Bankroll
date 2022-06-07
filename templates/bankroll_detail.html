@@ -4,21 +4,23 @@
 
 <div class="container">
 	<div class="detail">
-		<h1>{{ object.date }}</h1>
-		<h1>Game -- 
-			{% if object.game == '1' %}	
-				No Limit Hold'em
+		<h1>{{ object.date|date:"Y-m-d" }}</h1>
+		<h1>Game :&nbsp;&nbsp;
+			{% if object.game == '1' %}
+				NLH
 			{% elif object.game == '2' %}
-				Limit Hold'em
+				LH
 			{% elif object.game == '3' %}
 				Pot Limit Omaha
 			{% endif %}</h1>
 
-		<h1>By In -- {{ object.by_in }}</h1>
+		<h1>Win :&nbsp;&nbsp; {{ object.win }}</h1>
 
-		<h1>Result -- {{ object.result }}</h1>
+		<h1>By In :&nbsp;&nbsp; {{ object.by_in }}</h1>
 
-		<h2>Rate -- 
+		<h1>Result :&nbsp;&nbsp; {{ object.result }}</h1>
+
+		<h2>Rate :&nbsp;&nbsp;
 			{% if object.rate == '1' %}
 				0.01 / 0.02
 			{% elif object.rate == '2' %}
@@ -37,7 +39,7 @@
 				1 / 2
 			{% endif %}</h2>
 
-		<h2>Kind --
+		<h2>Kind :&nbsp;&nbsp;
 			{% if object.kind == '1' %}
 				cash(zoom)
 			{% elif object.kind == '2' %}
@@ -48,24 +50,40 @@
 				spin&go
 			{% endif %}</h2>
 
-		<h2>Max Players --
+		<h2>Max Players :&nbsp;&nbsp;
 			{% if object.max_players == '1' %}
 				6
 			{% elif object.max_players == '2' %}
 				9
 			{% endif %}</h2>
 
-		<h2>Memo -- {{ object.memo }}</h2>
-		
+		<h2>Memo :&nbsp;&nbsp; {{ object.memo }}</h2>
+
 	</div>
+
+	<div class="updelete-menu">
+		<span class="updelete">
+			<a href="{% url 'data-update' object.pk %}" class="update">Update</a>
+		</span>
+
+		<span class="updelete">
+			<a href="{% url 'data-delete' object.pk %}" class="delete">Delete</a>
+		</span>
+	</div>
+
 
 	<div class="menu">
-		<div class="updelete"><a href="{% url 'data-update' object.pk %}" class="update">Update</a></div>
+		<div class="menu">
+			<a href="{{request.META.HTTP_REFERER}}" class="back"><sapn class="fa fa-undo">BACK</sapn></a>
+		</div>
 
-		<div class="updelete"><a href="{% url 'data-delete' object.pk %}" class="delete">Delete</a></div>
-
-		<a href="{% url 'data-list' %}" class="backhome"><sapn class="fa fa-undo">Return to Home</sapn></a>
+		<div class='menu'>
+			<a href="{% url 'data-list' %}" class="backhome"><sapn class="fa fa-undo">Return to Home</sapn></a>
+		</div>
 	</div>
+
+
+
 
 </div>
 

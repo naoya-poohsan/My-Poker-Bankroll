@@ -9,30 +9,46 @@
 	<title>Poker BankRoll</title>
 	<script src="https://kit.fontawesome.com/700536e4cf.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="{% static 'css/brstyle.css' %}">
+	<meta name=”description“ content=“ポーカーの記録を取れるアプリです。個人開発したものでシンプルです。無料です。PokerStarsのプレイヤーが作ったので記録入力時のレートなどはStarsのものです。“ />
+	<!-- Favivonの設定　-->
+
 </head>
 
 <body>
-	<div class="container">
+	<div class="container header">
 		<header>
-			
-      		<span class="fa fa-university"></span>
-      		Poker Bankroll
-      		<span class="fa fa-university"></span>
-			
+			<h1>
+				<a href="{% url 'data-list' %}">
+					<span class="fa fa-university"></span>
+					Poker Bankroll
+					<span class="fa fa-university"></span>
+				</a>
+			</h1>
 
 			{% if user.id is None %}
-				 <a href="{% url 'account_login' %}" class="log_btn">Click Here!</a>
+				<nav><a href="{% url 'account_login' %}" class="log_btn">Click Here!</a></nav>
 			{% else %}
 				<!--<a>{% user_display user %}</a>-->
-				<a href="{% url 'account_logout' %}" class="log_btn">Log out</a>
+				<nav><a href="{% url 'account_logout' %}" class="log_btn">Log out</a></nav>
 			{% endif %}
 		</header>
+
 	</div>
 
 	{% block content %}
 	 replace me
 	{% endblock %}
 
+	<div class="container footer">
+		<footer>
+			<nav>
+				<span class="fa fa-brands fa-github"></span>
+				<a href="https://github.com/naoya-poohsan/My-Poker-Bankroll" target="_blank">Github</a>
+			</nav>
+			<nav>Copyright ©︎ Naoya Matsuo 2021</nav>
+		</footer>
+	</div>
+
 </body>
-	
+
 </html>

@@ -23,7 +23,9 @@ from bankroll.views import (
                 DataDetailView,
                 DataDeleteView,
                 home_view,
-                sample_home_view,     
+                sample_home_view,
+                filter_view,
+                filtered_home_view,
                     )
 
 
@@ -31,8 +33,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
 
-    path('', sample_home_view, name='sample-data-list'),
-    path('home', home_view, name='data-list'),
+    path('sample', sample_home_view, name='sample-data-list'),
+    path('', home_view, name='data-list'),
+    path('filter', filter_view, name='data-filter'),
+    path('filtered', filtered_home_view, name='filtered-data'),
     path('input/', DataInputView.as_view(), name='data-input'),
     path('<int:pk>/', DataDetailView.as_view(), name='data-detail'),
     path('<int:pk>/delete/', DataDeleteView.as_view(), name='data-delete'),

@@ -2,12 +2,12 @@
 
 {% block content %}
 
-<div class="container">	
+<div class="container">
 
-	<div clss="graph">
+	<div class="graph">
 		<h1>Sample Graph </h1>
 			<p class="graph-image">
-				<img src="data:image/png;base64,{{ graph | safe }}">
+				<img src="data:image/png;base64,{{ graph | safe }}" alt="Graph of Result">
 			</p>
 	</div>
 
@@ -16,15 +16,33 @@
 	</div>
 
 	<div class="list">
-		<h1>Sample Result List </h1>
+		<h1> Sample Result List </h1>
 		{% for instance in object_list %}
+			<!--for文を回数制限するif文-->
+			{% if forloop.counter <= 10 %}
 			<p><a href='{{ instance.get_absolute_url }}' class="result">
-			{{ instance.date }} - Result{{ instance.result　}} - By in{{ instance.by_in }}</a></p>
+				{{ instance.date|date:"Y-m-d" }} : {{ instance.win}}</a></p>
+			{% endif %}
 		{% endfor %}
+
+		{% if queryset_count > 10 %}
+		<span onclick="obj=document.getElementById('open1').style; obj.display=(obj.display=='none')?'block':'none';">
+			<a style="cursor:pointer;" class="all-list">▼ Watch All Results</a>
+		</span>
+
+		<span id="open1" style="display: none; clear: both;">
+		{% for instance in object_list %}
+			{% if forloop.counter > 10 %}
+				<p><a href='{{ instance.get_absolute_url }}' class="result">
+					{{ instance.date|date:"Y-m-d" }} : {{ instance.win}}</a></p>
+			{% endif %}
+		{% endfor %}
+		{% endif %}
+		</span>
 	</div>
 
 	<div class="menu">
-		<div><a href="{{request.META.HTTP_REFERER}}" class="back"><sapn class="fa fa-undo">BACK</sapn></a></div>
+		<div><a href="{% url 'data-filter' %}" class="filter"><sapn class="fa-solid fa-filter"></sapn>Filter</a></div>
 	</div>
 
 </div>

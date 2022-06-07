@@ -3,13 +3,13 @@
 {% block content %}
 
 <div class="container">
-	
-	<div class="ipfrom">
+
+	<div class="ipform">
 		<form action='.' method='POST'>{% csrf_token %}
 			{{ form.as_p }}
 		<p><input class="ipbtn" type='submit' value="Save"></p>
 		</form>
-	</div>	
+	</div>
 
 	<div class="menu">
 		<a href="{{request.META.HTTP_REFERER}}" class="back"><sapn class="fa fa-undo">BACK</sapn></a>

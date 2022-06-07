@@ -12,13 +12,16 @@
     {% endblock %}
   </head>
   <body>
-    <header>
-      <a>--</a>
-      <span class="fa fa-university"></span>
-      Poker Bankroll
-      <span class="fa fa-university"></span>
-      <a>--</a>
+    <header class="header">
+      <h1>
+				<a href="{{request.META.HTTP_REFERER}}">
+					<span class="fa fa-university"></span>
+					Poker Bankroll
+					<span class="fa fa-university"></span>
+				</a>
+			</h1>
     </header>
+
     {% block body %}
 
     {% block content %}
@@ -28,5 +31,16 @@
 
     {% block extra_body %}
     {% endblock %}
+
+    <div class="container footer">
+      <footer>
+        <nav>
+          <span class="fa fa-brands fa-github"></span>
+          <a href="https://github.com/naoya-poohsan/My-Poker-Bankroll" target="_blank">Github</a>
+        </nav>
+        <nav>Copyright ©︎ Naoya Matsuo 2021</nav>
+      </footer>
+    </div>
+
   </body>
 </html>

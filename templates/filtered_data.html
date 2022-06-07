@@ -2,22 +2,18 @@
 
 {% block content %}
 
-<div class="container">
+<div class='container'>
 
 	<div class="graph">
-		<h1> Graph </h1>
+		<h1> Filtered Graph </h1>
 			<p class="graph-image">
 				<img src="data:image/png;base64,{{ graph | safe }}" alt="Graph of Result">
 			</p>
 
 	</div>
 
-	<div class="menu">
-		<div><a href="{% url 'data-input' %}" class="input"><span class="fa fa-plus-circle fa-2x"></span>New Result</a></div>
-	</div>
-
 	<div class="list">
-		<h1> Result List </h1>
+		<h1> Filtered Result List </h1>
 		{% for instance in object_list %}
 			<!--for文を回数制限するif文-->
 			{% if forloop.counter <= 10 %}
@@ -44,8 +40,14 @@
 
 	</div>
 
+
+
 	<div class="menu">
-		<div><a href="{% url 'data-filter' %}" class="filter"><sapn class="fa-solid fa-filter"></sapn>Filter</a></div>
+        <div><a href="{{request.META.HTTP_REFERER}}" class="back"><sapn class="fa fa-undo">Back to Filter</sapn></a></div>
+    </div>
+
+	<div class='menu'>
+		<a href="{% url 'data-list' %}" class="backhome"><sapn class="fa fa-undo">Return to Home</sapn></a>
 	</div>
 
 </div>

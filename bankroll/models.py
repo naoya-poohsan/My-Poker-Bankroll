@@ -21,3 +21,21 @@ class Result(models.Model):
 
 	def get_absolute_url(self):
 		return reverse('data-detail', kwargs={'pk': self.id})
+
+
+	def win(self):
+		win = self.result - self.by_in
+		text = ''
+		if win >= 0:
+			text = 'Win {:+}'.format(win)
+		else :
+			text = 'Lose {:+}'.format(win)
+		return text
+
+
+class Filter(models.Model):
+    start_date = models.DateField()
+    end_date   = models.DateField()
+    rate       = models.CharField(default='', max_length=100)
+
+
