@@ -149,7 +149,7 @@ def home_view(request):
 		graph = Plot_Graph(dates, bankroll, 0)
 	else:
 		graph = Plot_Graph(dates, bankroll, bankroll[-1])
-
+k
 
 	context = {
 		'object_list': reversed_queryset,
@@ -277,7 +277,10 @@ def filtered_home_view(request):
 	# 日付が被った時に(1),(2)と区別するための加工
 	dates = [x + "(" + str(dates[0:i].count(x) + 1) + ")" if dates[0:i].count(x) > 0 else x for i, x in enumerate(dates)]
 
-	graph = Plot_Graph(dates, bankroll, bankroll[-1])
+	if not bankroll:
+		graph = Plot_Graph(dates, bankroll, 0)
+	else:
+		graph = Plot_Graph(dates, bankroll, bankroll[-1])
 
 
 	context = {
