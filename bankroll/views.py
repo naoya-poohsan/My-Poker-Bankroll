@@ -149,7 +149,7 @@ def home_view(request):
 		graph = Plot_Graph(dates, bankroll, 0)
 	else:
 		graph = Plot_Graph(dates, bankroll, bankroll[-1])
-k
+
 
 	context = {
 		'object_list': reversed_queryset,
