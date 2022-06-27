@@ -15,6 +15,8 @@
 		<div><a href="{% url 'data-input' %}" class="input"><span class="fa fa-plus-circle fa-3x"></span>New Result</a></div>
 	</div>
 
+	<hr />
+
 	<div class="list">
 		<h1> Sample Result List </h1>
 		{% for instance in object_list %}
@@ -40,6 +42,8 @@
 		{% endif %}
 		</span>
 	</div>
+
+	<hr />
 
 	<div class="menu">
 		<div><a href="{% url 'data-filter' %}" class="filter"><sapn class="fa-solid fa-filter"></sapn>Filter</a></div>

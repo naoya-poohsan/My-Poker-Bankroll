@@ -207,24 +207,9 @@ def filter_view(request):
 
 
 
-start_date_year = 0
-start_date_month = 0
-start_date_day = 0
-end_date_year = 0
-end_date_month = 0
-end_date_day = 0
-rate = 0
-
 
 @login_required
 def filtered_home_view(request):
-	global start_date_year
-	global start_date_month
-	global start_date_day
-	global end_date_year
-	global end_date_month
-	global end_date_day
-	global rate
 
 	if 'start_date_year' in request.GET:
 		start_date_year = request.GET['start_date_year']
